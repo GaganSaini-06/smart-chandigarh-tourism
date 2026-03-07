@@ -1,96 +1,173 @@
+/* GLOBAL */
+
+html{
+scroll-behavior:smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fc;
+}
+
 section {
-    padding: 60px 0;
+    padding: 80px 0;
+}
+
+/* NAVBAR */
+.custom-navbar {
+    background: rgba(10, 25, 47, 0.85);
+    backdrop-filter: blur(8px);
+    transition: 0.3s;
+}
+
+.navbar .nav-link {
+    color: #ffffff !important;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.navbar .nav-link:hover {
+    color: #00bcd4 !important;
 }
 
 /* HERO SECTION */
 .hero-section {
-    height: 100vh;
+    height: 85vh;
     background: url('../images/background.png') no-repeat center center/cover;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
 }
 
-/* Dark overlay */
-.hero-section::before {
-    content: "";
+.hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1;
+    background: linear-gradient(to right, rgba(10,25,47,0.8), rgba(0,0,0,0.4));
 }
 
-/* Content */
+/* HERO CONTENT */
 .hero-content {
     position: relative;
-    z-index: 2;
     color: white;
+    z-index: 2;
     max-width: 700px;
 }
 
-/* Heading */
 .hero-content h1 {
-    font-size: 60px;
+    font-size: 55px;
     font-weight: 700;
+    letter-spacing: 1px;
 }
 
-/* Subtext */
 .hero-content p {
-    font-size: 20px;
+    font-size: 18px;
     margin: 15px 0 25px;
 }
 
-/* Button */
-.hero-content .btn {
-    padding: 12px 35px;
-    font-size: 18px;
-    border-radius: 30px;
-}
-
-/* NAVBAR */
-.navbar {
-    background: rgba(0, 0, 0, 0.6) !important;
-    z-index: 999;
-}
-.navbar .nav-link {
-    color: white !important;
-    margin-left: 15px;
-    font-weight: 500;
-}
-
-.navbar .nav-link:hover {
-    color: #00d4ff !important;
-}
-
-/* CARDS SECTION */
-.card {
+/* BUTTON */
+.btn-main {
+    background: linear-gradient(45deg, #00bcd4, #007bff);
     border: none;
-    border-radius: 12px;
-    overflow: hidden;
+    padding: 12px 30px;
+    border-radius: 30px;
+    color: white;
+    font-weight: 500;
     transition: 0.3s;
 }
 
-.card:hover {
-    transform: translateY(-8px);
+.btn-main:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
-.card img {
-    height: 220px;
+.hero-buttons a {
+    margin: 10px;
+}
+
+/* SECTION TITLE */
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #0a192f;
+}
+
+/* PLACE CARDS */
+/* PLACE CARDS */
+.place-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Image */
+.place-card img {
+    width: 100%;
+    height: 300px;
     object-fit: cover;
+    transition: transform 0.6s ease;
 }
 
-.card-body {
-    padding: 20px;
+/* Hover Effects */
+.place-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
 }
 
-.card-title {
+.place-card:hover img {
+    transform: scale(1.1);
+}
+
+/* CARD OVERLAY */
+.place-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 25px;
+    background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+    color: white;
+    transition: 0.4s;
+}
+
+.place-overlay h5 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Small description appears on hover */
+.place-overlay p {
+    font-size: 14px;
+    margin-top: 8px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: 0.4s;
+}
+
+.place-card:hover .place-overlay p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* FOOTER */
+.footer {
+    background: #0a192f;
+    color: white;
+    padding: 30px 0;
+    margin-top: 50px;
+}
+
+.footer h5 {
     font-weight: 600;
 }
 
-.card-body hr {
-    width: 40px;
-    margin: 10px auto;
-    border: 2px solid #0d6efd;
+.footer p {
+    margin: 5px 0;
+    color: #ccc;
 }
