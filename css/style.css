@@ -1,9 +1,4 @@
 /* GLOBAL */
-
-html{
-scroll-behavior:smooth;
-}
-
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f8f9fc;
@@ -44,7 +39,7 @@ section {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, rgba(10,25,47,0.8), rgba(0,0,0,0.4));
+    background: linear-gradient(to right, rgba(10, 25, 47, 0.8), rgba(0, 0, 0, 0.4));
 }
 
 /* HERO CONTENT */
@@ -79,7 +74,7 @@ section {
 
 .btn-main:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .hero-buttons a {
@@ -102,7 +97,7 @@ section {
     border-radius: 15px;
     cursor: pointer;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Image */
@@ -116,7 +111,7 @@ section {
 /* Hover Effects */
 .place-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 .place-card:hover img {
@@ -129,7 +124,7 @@ section {
     bottom: 0;
     width: 100%;
     padding: 25px;
-    background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
     color: white;
     transition: 0.4s;
 }
