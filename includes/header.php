@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Chandigarh Tourism</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/smart-chandigarh-tourism/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -18,8 +18,8 @@
 
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link active" href="index.php">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="places.php">Places</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/smart-chandigarh-tourism/index.php">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/smart-chandigarh-tourism/pages/places.php">Places</a></li>
             </ul>
         </div>
     </div>

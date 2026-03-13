@@ -9,7 +9,7 @@
         <p>Explore the City Beautiful with Us</p>
 
         <div class="hero-buttons">
-            <a href="places.php" class="btn btn-main">Explore Places</a>
+            <a href="pages/places.php" class="btn btn-main">Explore Places</a>
         </div>
     </div>
 </section>
