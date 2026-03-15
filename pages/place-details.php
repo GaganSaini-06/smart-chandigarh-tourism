@@ -94,7 +94,7 @@ $place = $places[$id];
 
 <?php if($place['ticket']) { ?>
 
-<a href="#" class="btn btn-main mt-4">Book Ticket</a>
+<a href="book-ticket.php?place=<?php echo urlencode($place['name']); ?>" class="btn btn-main mt-4">Book Ticket</a>
 
 <?php } else { ?>
 

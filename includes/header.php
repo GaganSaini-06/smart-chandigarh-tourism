@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +22,27 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link active" href="/smart-chandigarh-tourism/index.php">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="/smart-chandigarh-tourism/pages/places.php">Places</a></li>
+                <?php if(isset($_SESSION['user_id'])) { ?>
+
+                    <li class="nav-item">
+                    <span class="nav-link">Hello, <?php echo $_SESSION['user_name']; ?></span>
+                    </li>
+
+                    <li class="nav-item">
+                    <a class="nav-link" href="/smart-chandigarh-tourism/pages/logout.php">Logout</a>
+                    </li>
+
+                    <?php } else { ?>
+
+                    <li class="nav-item">
+                    <a class="nav-link" href="/smart-chandigarh-tourism/pages/login.php">Login</a>
+                    </li>
+
+                    <li class="nav-item">
+                    <a class="nav-link" href="/smart-chandigarh-tourism/pages/register.php">Register</a>
+                    </li>
+
+                    <?php } ?>
             </ul>
         </div>
     </div>
