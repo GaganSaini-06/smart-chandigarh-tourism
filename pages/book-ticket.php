@@ -74,3 +74,21 @@ document.getElementById("total").value = tickets * price;
 </script>
 
 <?php include '../includes/footer.php'; ?>
+
+
+<!-- for booking tickets
+
+CREATE TABLE bookings (
+id INT AUTO_INCREMENT PRIMARY KEY,
+user_id INT,
+place_name VARCHAR(100),
+visit_date DATE,
+tickets INT,
+total_amount INT,
+payment_status VARCHAR(50) DEFAULT 'Pending',
+utr_number VARCHAR(100),
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+); -->
+
+
+<!-- ALTER TABLE bookings ADD utr_number VARCHAR(100); -->
