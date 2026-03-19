@@ -1,20 +1,28 @@
 <?php
+session_start();
+
+if(!isset($_SESSION['user_id']) || $_SESSION['user_id'] != 1){
+    header("Location: ../index.php");
+    exit();
+}
+
 include '../includes/config.php';
 include '../includes/header.php';
 
+// Fetch bookings with user names
 $sql = "SELECT bookings.*, users.name 
         FROM bookings 
         JOIN users ON bookings.user_id = users.id 
         ORDER BY bookings.id DESC";
 
-$result = mysqli_query($conn,$sql);
+$result = mysqli_query($conn, $sql);
 ?>
 
 <div class="container mt-5 pt-5">
 
-<h2 class="text-center mb-4">Admin Dashboard</h2>
+<h2 class="text-center mb-4 fw-bold">Admin Dashboard</h2>
 
-<table class="table table-bordered text-center">
+<table class="table table-hover table-bordered shadow">
 
 <thead class="table-dark">
 <tr>
@@ -42,18 +50,28 @@ $result = mysqli_query($conn,$sql);
 <td><?php echo $row['tickets']; ?></td>
 <td>₹<?php echo $row['total_amount']; ?></td>
 <td><?php echo $row['utr_number']; ?></td>
-<td><?php echo $row['payment_status']; ?></td>
 
+<!-- STATUS BADGE -->
 <td>
-<?php if($row['payment_status'] == 'Pending') { ?>
+<?php
+$status = $row['payment_status'];
 
+if($status == 'Pending'){
+    echo "<span class='badge bg-warning'>Pending</span>";
+}
+elseif($status == 'Confirmed'){
+    echo "<span class='badge bg-success'>Confirmed</span>";
+}
+else{
+    echo "<span class='badge bg-danger'>Rejected</span>";
+}
+?>
+</td>
+
+<!-- ACTION BUTTONS -->
+<td>
 <a href="approve.php?id=<?php echo $row['id']; ?>" class="btn btn-success btn-sm">Approve</a>
-
 <a href="reject.php?id=<?php echo $row['id']; ?>" class="btn btn-danger btn-sm">Reject</a>
-
-<?php } else { ?>
-—
-<?php } ?>
 </td>
 
 </tr>

@@ -1,4 +1,8 @@
-<?php session_start(); ?>
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,6 +26,8 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link active" href="/smart-chandigarh-tourism/index.php">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="/smart-chandigarh-tourism/pages/places.php">Places</a></li>
+                
+                
                 <?php if(isset($_SESSION['user_id'])) { ?>
 
                     <li class="nav-item">
@@ -41,6 +47,16 @@
                     <li class="nav-item">
                     <a class="nav-link" href="/smart-chandigarh-tourism/pages/register.php">Register</a>
                     </li>
+
+                    <?php } ?>
+                    
+
+                    <!-- Admin Panel -->
+                    <?php if(isset($_SESSION['user_id']) && $_SESSION['user_id'] == 1) { ?>
+
+                        <li class="nav-item">
+                        <a class="nav-link" href="/smart-chandigarh-tourism/admin/dashboard.php">Admin</a>
+                        </li>
 
                     <?php } ?>
             </ul>
