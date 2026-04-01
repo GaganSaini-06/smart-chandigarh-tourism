@@ -12,7 +12,8 @@ $places = [
 "description" => "Sukhna Lake is a beautiful man-made lake located at the foothills of the Shivalik hills.",
 "timing" => "5:00 AM – 9:00 PM",
 "fee" => "Free entry",
-"ticket" => false
+"ticket" => false,
+"map" => "Sukhna Lake Chandigarh"
 ],
 
 2 => [
@@ -21,7 +22,8 @@ $places = [
 "description" => "Rock Garden is a unique sculpture garden created by Nek Chand using industrial waste.",
 "timing" => "9:00 AM – 7:00 PM",
 "fee" => "₹30",
-"ticket" => true
+"ticket" => true,
+"map" => "Rock Garden Chandigarh"
 ],
 
 3 => [
@@ -30,7 +32,8 @@ $places = [
 "description" => "Zakir Hussain Rose Garden is Asia's largest rose garden with more than 1600 varieties of roses.",
 "timing" => "6:00 AM – 8:00 PM",
 "fee" => "Free entry",
-"ticket" => false
+"ticket" => false,
+"map" => "Rose Garden Chandigarh"
 ],
 
 4 => [
@@ -39,7 +42,8 @@ $places = [
 "description" => "Elante Mall is the biggest shopping mall in Chandigarh with shopping brands, restaurants and cinema.",
 "timing" => "11:00 AM – 10:00 PM",
 "fee" => "Free entry",
-"ticket" => false
+"ticket" => false,
+"map" => "Elante Mall Chandigarh"
 ],
 
 5 => [
@@ -48,7 +52,8 @@ $places = [
 "description" => "Capitol Complex is a UNESCO World Heritage site designed by Le Corbusier.",
 "timing" => "9:00 AM – 5:00 PM",
 "fee" => "Free entry",
-"ticket" => false
+"ticket" => false,
+"map" => "Capitol Complex Chandigarh"
 ],
 
 6 => [
@@ -57,7 +62,8 @@ $places = [
 "description" => "Sector 17 Plaza is the most famous shopping and cultural hub of Chandigarh.",
 "timing" => "10:00 AM – 9:00 PM",
 "fee" => "Free entry",
-"ticket" => false
+"ticket" => false,
+"map" => "Sector 17 Chandigarh"
 ]
 
 ];
@@ -101,7 +107,23 @@ $place = $places[$id];
 <button class="btn btn-success mt-4" disabled>Free Entry</button>
 
 <?php } ?>
+
 </div>
+
+</div>
+
+<!-- ================= GOOGLE MAP ================= -->
+
+<div class="mt-5">
+<h4 class="mb-3">Location</h4>
+
+<iframe 
+    src="https://www.google.com/maps?q=<?php echo urlencode($place['map']); ?>&output=embed"
+    width="100%" 
+    height="350" 
+    style="border:0;" 
+    loading="lazy">
+</iframe>
 
 </div>
 

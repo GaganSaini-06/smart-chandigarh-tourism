@@ -171,3 +171,23 @@ section {
 
 
 /* Home Page and Places Page DONE */
+
+
+
+
+/* Smooth animations */
+.card, .btn {
+    transition: all 0.3s ease;
+}
+
+/* Button hover glow */
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Table styling */
+.table {
+    border-radius: 10px;
+    overflow: hidden;
+}

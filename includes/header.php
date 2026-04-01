@@ -25,9 +25,28 @@ if (session_status() === PHP_SESSION_NONE) {
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link active" href="/smart-chandigarh-tourism/index.php">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/smart-chandigarh-tourism/pages/about-project.php">About Project</a></li>
                 <li class="nav-item"><a class="nav-link" href="/smart-chandigarh-tourism/pages/places.php">Places</a></li>
                 
+                <!-- User Dashboard -->
+                <?php if(isset($_SESSION['user_id'])) { ?>
+
+                        <li class="nav-item">
+                        <a class="nav-link" href="/smart-chandigarh-tourism/pages/my-bookings.php">My Bookings</a>
+                        </li>
+
+                <?php } ?>
+
+                <!-- Admin Panel -->
+                <?php if(isset($_SESSION['user_id']) && $_SESSION['user_id'] == 1) { ?>
+
+                        <li class="nav-item">
+                        <a class="nav-link" href="/smart-chandigarh-tourism/admin/dashboard.php">Admin</a>
+                        </li>
+
+                <?php } ?>
                 
+                <!-- Login, Logout and register -->
                 <?php if(isset($_SESSION['user_id'])) { ?>
 
                     <li class="nav-item">
@@ -47,16 +66,6 @@ if (session_status() === PHP_SESSION_NONE) {
                     <li class="nav-item">
                     <a class="nav-link" href="/smart-chandigarh-tourism/pages/register.php">Register</a>
                     </li>
-
-                    <?php } ?>
-                    
-
-                    <!-- Admin Panel -->
-                    <?php if(isset($_SESSION['user_id']) && $_SESSION['user_id'] == 1) { ?>
-
-                        <li class="nav-item">
-                        <a class="nav-link" href="/smart-chandigarh-tourism/admin/dashboard.php">Admin</a>
-                        </li>
 
                     <?php } ?>
             </ul>

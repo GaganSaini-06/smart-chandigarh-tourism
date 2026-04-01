@@ -9,7 +9,19 @@ if(!isset($_SESSION['user_id']) || $_SESSION['user_id'] != 1){
 include '../includes/config.php';
 include '../includes/header.php';
 
-// Fetch bookings with user names
+// ================== ADMIN STATS ==================
+
+// TOTAL USERS
+$user_count = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) as total FROM users"))['total'];
+
+// TOTAL BOOKINGS
+$booking_count = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) as total FROM bookings"))['total'];
+
+// PENDING BOOKINGS
+$pending_count = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) as total FROM bookings WHERE payment_status='Pending'"))['total'];
+
+// ================== BOOKINGS DATA ==================
+
 $sql = "SELECT bookings.*, users.name 
         FROM bookings 
         JOIN users ON bookings.user_id = users.id 
@@ -21,6 +33,34 @@ $result = mysqli_query($conn, $sql);
 <div class="container mt-5 pt-5">
 
 <h2 class="text-center mb-4 fw-bold">Admin Dashboard</h2>
+
+<!-- ================== STATS CARDS ================== -->
+<div class="row mb-4">
+
+    <div class="col-md-4">
+        <div class="card text-center shadow p-3">
+            <h5>Total Users</h5>
+            <h2><?php echo $user_count; ?></h2>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card text-center shadow p-3">
+            <h5>Total Bookings</h5>
+            <h2><?php echo $booking_count; ?></h2>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card text-center shadow p-3">
+            <h5>Pending Requests</h5>
+            <h2><?php echo $pending_count; ?></h2>
+        </div>
+    </div>
+
+</div>
+
+<!-- ================== TABLE ================== -->
 
 <table class="table table-hover table-bordered shadow">
 
@@ -51,7 +91,7 @@ $result = mysqli_query($conn, $sql);
 <td>₹<?php echo $row['total_amount']; ?></td>
 <td><?php echo $row['utr_number']; ?></td>
 
-<!-- STATUS BADGE -->
+<!-- STATUS -->
 <td>
 <?php
 $status = $row['payment_status'];
@@ -68,7 +108,7 @@ else{
 ?>
 </td>
 
-<!-- ACTION BUTTONS -->
+<!-- ACTION -->
 <td>
 <a href="approve.php?id=<?php echo $row['id']; ?>" class="btn btn-success btn-sm">Approve</a>
 <a href="reject.php?id=<?php echo $row['id']; ?>" class="btn btn-danger btn-sm">Reject</a>

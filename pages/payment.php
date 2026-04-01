@@ -37,7 +37,7 @@ $total = $tickets * 1;
 
 <h5>Scan & Pay using Google Pay</h5>
 
-<img src="../images/payment-qr.jpeg" width="220">
+<img src="../images/payment-qr.jpeg" width="220" class="d-block mx-auto mt-3">
 
 <p class="mt-3">After payment click confirm button</p>
 

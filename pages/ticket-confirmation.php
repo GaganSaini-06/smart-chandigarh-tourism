@@ -11,7 +11,7 @@ $total = $_GET['total'];
 
 <div class="card shadow p-5">
 
-<h2 class="text-success">Your booking request has been submitted.</h2>
+<h2 class="text-success">🎉 Your booking request has been submitted! Please wait for admin approval.</h2>
 
 <hr>
 

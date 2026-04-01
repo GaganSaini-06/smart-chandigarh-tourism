@@ -10,8 +10,6 @@ exit();
 }
 
 $place = $_GET['place'];
-$ticket_price = 1;
-
 ?>
 
 <div class="container mt-5 pt-5">
@@ -45,7 +43,7 @@ $ticket_price = 1;
 
 <div class="mb-3">
 <label>Total Amount (₹)</label>
-<input type="text" id="total" class="form-control" value="1" readonly>
+<input type="text" id="total" name="total_amount" class="form-control" value="1" readonly>
 </div>
 
 <button class="btn btn-main w-100">Proceed to Payment</button>
@@ -60,35 +58,7 @@ $ticket_price = 1;
 
 </div>
 
-<script>
-
-let price = 1;
-
-document.getElementById("tickets").addEventListener("input", function() {
-
-let tickets = this.value;
-document.getElementById("total").value = tickets * price;
-
-});
-
-</script>
+<!-- EXTERNAL JS -->
+<script src="../js/script.js"></script>
 
 <?php include '../includes/footer.php'; ?>
-
-
-<!-- for booking tickets
-
-CREATE TABLE bookings (
-id INT AUTO_INCREMENT PRIMARY KEY,
-user_id INT,
-place_name VARCHAR(100),
-visit_date DATE,
-tickets INT,
-total_amount INT,
-payment_status VARCHAR(50) DEFAULT 'Pending',
-utr_number VARCHAR(100),
-created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-); -->
-
-
-<!-- ALTER TABLE bookings ADD utr_number VARCHAR(100); -->
