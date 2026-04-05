@@ -83,3 +83,16 @@ else{
 </div>
 
 <?php include '../includes/footer.php'; ?>
+
+
+
+<!-- CREATE TABLE bookings (
+id INT AUTO_INCREMENT PRIMARY KEY,
+user_id INT,
+place_name VARCHAR(100),
+visit_date DATE,
+tickets INT,
+total_amount INT,
+payment_status VARCHAR(50) DEFAULT 'Pending',
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+); -->
