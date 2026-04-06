@@ -21,7 +21,7 @@ $places = [
 "image" => "../images/rock_garden.png",
 "description" => "Rock Garden is a unique sculpture garden created by Nek Chand using industrial waste.",
 "timing" => "9:00 AM – 7:00 PM",
-"fee" => "₹30",
+"fee" => "₹1",
 "ticket" => true,
 "map" => "Rock Garden Chandigarh"
 ],
